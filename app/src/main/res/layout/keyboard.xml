@@ -1,0 +1,148 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:gravity="center_vertical"
+
+    android:orientation="vertical"
+    >
+    <LinearLayout
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:gravity="center_horizontal"
+        android:layout_height="wrap_content">
+        <Button
+            style="@style/Button"
+            android:text="Q"
+            ></Button>
+        <Button
+            style="@style/Button"
+            android:text="W"
+            ></Button>
+        <Button
+            style="@style/Button"
+            android:text="E"
+            ></Button>
+        <Button
+            style="@style/Button"
+            android:text="R"
+            ></Button>
+        <Button
+            style="@style/Button"
+            android:text="T"
+            ></Button>
+        <Button
+            style="@style/Button"
+            android:text="Y"
+            ></Button>
+        <Button
+            style="@style/Button"
+            android:text="U"
+            ></Button>
+        <Button
+            style="@style/Button"
+            android:text="I"
+            ></Button>
+        <Button
+            style="@style/Button"
+            android:text="O"
+            ></Button>
+        <Button
+            style="@style/Button"
+            android:text="P"
+            ></Button>
+
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:gravity="center_horizontal"
+        android:layout_height="wrap_content">
+        <Button
+            style="@style/Button"
+            android:text="A"
+            ></Button>
+        <Button
+            style="@style/Button"
+            android:text="S"
+            ></Button>
+        <Button
+            style="@style/Button"
+            android:text="D"
+            ></Button>
+        <Button
+            style="@style/Button"
+            android:text="F"
+            ></Button>
+        <Button
+            style="@style/Button"
+            android:text="G"
+            ></Button>
+        <Button
+            style="@style/Button"
+            android:text="H"
+            ></Button>
+        <Button
+            style="@style/Button"
+            android:text="J"
+            ></Button>
+        <Button
+            style="@style/Button"
+            android:text="K"
+            ></Button>
+        <Button
+            style="@style/Button"
+            android:text="L"
+            ></Button>
+
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:gravity="center_horizontal"
+        android:layout_height="wrap_content">
+        <Button
+            style="@style/Button"
+            android:text="Z"
+            ></Button>
+        <Button
+            style="@style/Button"
+            android:text="X"
+            ></Button>
+        <Button
+            style="@style/Button"
+            android:text="C"
+            ></Button>
+        <Button
+            style="@style/Button"
+            android:text="V"
+            ></Button>
+        <Button
+            style="@style/Button"
+            android:text="B"
+            ></Button>
+        <Button
+            style="@style/Button"
+            android:text="N"
+            ></Button>
+        <Button
+            style="@style/Button"
+            android:text="M"
+            ></Button>
+        <Button
+            style="@style/Button"
+            android:text="DEL"
+            ></Button>
+
+
+
+    </LinearLayout>
+
+
+
+</LinearLayout>
