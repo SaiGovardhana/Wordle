@@ -45,7 +45,7 @@ public class MainActivity extends Activity {
 
                     @Override
                     public void onAnimationEnd(Animator animator) {
-                        b.animate().setDuration(700).alpha(1);
+                        b.animate().setDuration(750).alpha(1);
                     }
 
                     @Override
