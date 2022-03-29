@@ -23,8 +23,10 @@ import android.view.Window;
 import android.widget.Button;
 import android.widget.LinearLayout;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import java.util.ArrayList;
+import java.util.HashSet;
 import java.util.List;
 
 import sai.govardhan.wordle.R;
@@ -35,8 +37,18 @@ public class GameActivity extends Activity {
     TextView[][] texts;
     int row=0,col=0;
     boolean isGamePaused;
+    HashSet<String>dict;
+    String words[];
+    String easy[];
     @Override
     protected void onCreate(Bundle savedInstanceState) {
+        dict=new HashSet<String>();
+        words=getResources().getStringArray(R.array.words);
+        easy=getResources().getStringArray(R.array.words);
+        for(String x:words)
+            dict.add(x);
+        for(String x:easy)
+            dict.add(x);
         super.onCreate(savedInstanceState);
         Intent t=getIntent();
         g=new Game(t.getStringExtra("word"),0,0);
@@ -74,6 +86,7 @@ public class GameActivity extends Activity {
             ad.setView(v);
 
             AlertDialog d=ad.show();
+            d.setCanceledOnTouchOutside(false);
             ((Button)v.findViewById(R.id.continues)).setOnClickListener((vs)->{d.dismiss();finish(vs);});
 
         }
@@ -111,6 +124,7 @@ public class GameActivity extends Activity {
     }
     void ValidateGame()
     {    pauseInput();
+
         Log.d("VALUD","VALD");
         Integer verdict[]=g.validate();
         int checkRow=g.getCurRow()-1;
@@ -176,6 +190,7 @@ public class GameActivity extends Activity {
 
         }
     }
+    Toast t;
     public void onClick(View v)
     {   if(isGamePaused)
             return;
@@ -195,13 +210,23 @@ public class GameActivity extends Activity {
                 }
             return ;
             }
+
             Log.d("Pressed",b.getText().toString());
             int prevRow=g.getCurRow();
+            String curWord=g.getLastWord(prevRow)+b.getText().toString();
+            if(curWord.length()==5&&!dict.contains(curWord))
+            {   if(t!=null)
+                    t.cancel();
+                t=Toast.makeText(getApplicationContext(),"Word not in dictionary",Toast.LENGTH_SHORT);
+                t.show();
+                return;
+            }
             Log.d(g.getCurRow().toString(),g.getCurCol().toString());
             texts[g.getCurRow()][g.getCurCol()].setText(b.getText().toString());
             g.addLetterAt(b.getText().toString());
             if(prevRow!=g.getCurRow())
-            {   ValidateGame();
+            {
+                ValidateGame();
 
             }
 

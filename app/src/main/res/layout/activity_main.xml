@@ -17,7 +17,7 @@
         android:translationY="1000dp"
         android:fontFamily="sans-serif-condensed-medium"
         android:text="WORDLE"
-        android:rotationX="3160"
+        android:rotationX="3600"
         android:textColor="@color/black"
         ></TextView>
     <Button

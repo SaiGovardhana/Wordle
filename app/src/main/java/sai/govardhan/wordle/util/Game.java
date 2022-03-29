@@ -5,7 +5,10 @@ public class Game
     public Integer getCurRow() {
         return curRow;
     }
-
+    public String getLastWord(int row)
+    {
+        return arr[row].toString();
+    }
     public Integer getCurCol() {
         return curCol;
     }
