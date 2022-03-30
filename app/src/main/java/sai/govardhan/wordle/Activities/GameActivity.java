@@ -60,6 +60,7 @@ public class GameActivity extends Activity {
         LinearLayout ll=findViewById(R.id.contain);
         getAllButtons((ViewGroup) ll);
         getAllTextViews((ViewGroup)ll);
+        resizeButtons();
 
 
 
@@ -177,7 +178,7 @@ public class GameActivity extends Activity {
         }
 
     }
-    void getAllButtons(ViewGroup v) {
+    List<Button> getAllButtons(ViewGroup v) {
         List<Button> mButtons = new ArrayList<>();
         for (int i = 0; i < v.getChildCount(); i++) {
             View child = v.getChildAt(i);
@@ -189,6 +190,7 @@ public class GameActivity extends Activity {
             }
 
         }
+        return  mButtons;
     }
     Toast t;
     public void onClick(View v)
@@ -246,4 +248,48 @@ public class GameActivity extends Activity {
         // Hide both the status bar and the navigation bar
         windowInsetsController.hide(WindowInsetsCompat.Type.systemBars());
     }
+
+    protected  void resizeButtons()
+    {   int width=getResources().getDisplayMetrics().widthPixels;
+        width-=100;
+        int firstRowWidth=width/10;
+        int secondRowWidth=width/10;
+        int thirdRowWidth=width/10;
+
+        LinearLayout v1=findViewById(R.id.firstRow);
+
+
+        List<Button> button1=getAllButtons(v1);
+
+        for(Button curBut:button1)
+        {
+            curBut.getLayoutParams().width=firstRowWidth;
+
+            curBut.requestLayout();
+        }
+
+        LinearLayout v3=findViewById(R.id.thirdRow);
+
+        List<Button> button3=getAllButtons(v3);
+
+        for(Button curBut:button3)
+        {
+            curBut.getLayoutParams().width=thirdRowWidth;
+
+            curBut.requestLayout();
+        }
+
+        LinearLayout v2=findViewById(R.id.secondRow);
+
+        List<Button> button2=getAllButtons(v2);
+
+        for(Button curBut:button2)
+        {
+            curBut.getLayoutParams().width=secondRowWidth;
+
+            curBut.requestLayout();
+        }
+
+    }
+
 }

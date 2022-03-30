@@ -75,6 +75,7 @@ public class MainActivity extends Activity {
         windowInsetsController.hide(WindowInsetsCompat.Type.systemBars());
     }
 
+
     public void playGame()
     {
         Intent t=new Intent(this,GameActivity.class);
