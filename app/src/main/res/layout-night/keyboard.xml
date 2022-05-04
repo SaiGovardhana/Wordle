@@ -8,6 +8,7 @@
     android:orientation="vertical"
     >
     <LinearLayout
+        android:id="@+id/firstRow"
         android:orientation="horizontal"
         android:layout_width="match_parent"
         android:gravity="center_horizontal"
@@ -57,6 +58,7 @@
     </LinearLayout>
 
     <LinearLayout
+        android:id="@+id/secondRow"
         android:orientation="horizontal"
         android:layout_width="match_parent"
         android:gravity="center_horizontal"
@@ -102,6 +104,7 @@
     </LinearLayout>
 
     <LinearLayout
+        android:id="@+id/thirdRow"
         android:orientation="horizontal"
         android:layout_width="match_parent"
         android:gravity="center_horizontal"
